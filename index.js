@@ -16,12 +16,9 @@ const pattern = [
     [2,4,6]
 ]
 let pvp=document.getElementById("s");
-console.log(cells[0]);
 
 function game(){
-    console.log("game");
 cells.forEach(cell => {
-    console.log(cell);
     //check this after the end
     if(cell.addEventListener('click', () => {
         if(cell.textContent ==="" || cell.textContent ===" "){
@@ -95,7 +92,6 @@ const checkwin=()=>{
                     }
                 }, 200);
                 setTimeout(() => {
-                    console.log(cells[i[0]].style.backgroundColor);
                     cells[i[0]].style.backgroundColor = "#fff";
                     cells[i[0]].removeAttribute("style");
                     cells[i[1]].style.backgroundColor = "#fff"; 
@@ -111,7 +107,6 @@ const checkwin=()=>{
 }
 function nee(){
 cells.forEach(cell => {
-    console.log(cell);
     cell.textContent = "";
     let winner=document.getElementById("win");
     winner.textContent = "Player X's Turn";
@@ -123,13 +118,12 @@ cells.forEach(cell => {
     cell.classList.remove("no");
     
 });
-console.log(cells[0]);
 }
 reset.addEventListener("click",()=>{
     nee();
     game();
-    console.log("GAME IS ON");
 
+    
 })
 function checkdraw(){
     let c=0;
